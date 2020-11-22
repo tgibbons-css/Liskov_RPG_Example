@@ -9,10 +9,21 @@ namespace Liskov_RPG_Example
         public string playerName;
         public string playerClass;
 
-        public int strength;
-        public int dexterity;
+        private int strength;
+        public int Strength { get => strength; set => strength = value; }
+
+        private int dexterity;
+        public int Dexterity { get => dexterity; set => dexterity = value; }
+
+        private Armor currentArmor;
+        public void wearArmor(Armor newArmor)
+        {
+            currentArmor = newArmor;
+        }
+        public Armor CurrentArmor { get => currentArmor;}
 
         List<InventoryItem> backpackItems = new List<InventoryItem>;
+
 
         public abstract float move();
     }

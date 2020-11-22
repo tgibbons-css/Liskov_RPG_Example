@@ -6,11 +6,12 @@ namespace Liskov_RPG_Example
 {
     class Fighter : GenericPlayer
     {
-        Weapon weaponInHand;
-        Armor armorWorn;
+        Weapon weaponInLeftHand;
+        Weapon weaponInRightHand;
+
         public override float move()
         {
-            if (armorWorn.weight > 5.0)
+            if (CurrentArmor.weight > 5.0)
             {
                 return 10.0F;
             } else
@@ -19,9 +20,9 @@ namespace Liskov_RPG_Example
             }
         }
 
-        virtual public int attack(Weapon currentWeapon)
+        virtual public int attack(Weapon weapon)
         {
-            int damage = currentWeapon.GetDamage();
+            int damage = weapon.GetDamage();
             return damage;
         }
     }
