@@ -4,11 +4,36 @@ using System.Text;
 
 namespace Liskov_RPG_Example
 {
-    public abstract class Weapon : InventoryItem
+    public class Weapon : InventoryItem
     {
         public int maxDamage;
         public int attacksPerTurn;
 
-        public abstract int GetDamage();
+        public Weapon(int maxDamage, int attacksPerTurn, float weight) : base(weight)
+        {
+            this.maxDamage = maxDamage;
+            this.attacksPerTurn = attacksPerTurn;
+        }
+
+        new public float Weight
+        {
+            get { return weight; }
+            set
+            {
+                if (value >= 10.0)
+                {
+                    weight = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("value", "Weapon weight must be 10 or more");
+                }
+            }
+        }
+        public virtual int GetDamage()
+        {
+            return maxDamage;
+
+        }
     }
 }

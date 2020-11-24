@@ -22,9 +22,21 @@ namespace Liskov_RPG_Example
         }
         public Armor CurrentArmor { get => currentArmor;}
 
-        List<InventoryItem> backpackItems = new List<InventoryItem>;
+        List<InventoryItem> backpackItems = new List<InventoryItem>();
 
-
+        public void AddItemToBackpack (InventoryItem item)
+        {
+            backpackItems.Add(item);
+        }
         public abstract float move();
+
+        public void reduceItemWeight()
+        {
+            foreach (InventoryItem item in backpackItems)
+            {
+                float itemWeight = item.Weight;
+                item.Weight = 1;
+            }
+        }
     }
 }

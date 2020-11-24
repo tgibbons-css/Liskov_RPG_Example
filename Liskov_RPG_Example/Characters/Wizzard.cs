@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Liskov_RPG_Example.Characters
+namespace Liskov_RPG_Example
 {
     class Wizzard : GenericPlayer
     {
-        Wand wand;
-        Broom broom;
+        //Wand wand;
+        //Broom broom;
 
+        /*
         public override float move()
         {
             if (broom != null)
@@ -33,6 +34,11 @@ namespace Liskov_RPG_Example.Characters
             }
             return damage;
         }
+        */
+        public override float move()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
-}
+

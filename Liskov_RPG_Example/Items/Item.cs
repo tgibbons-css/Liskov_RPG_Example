@@ -7,6 +7,6 @@ namespace Liskov_RPG_Example
     public class Item
     {
         public String name;
-        public String imageSprite
+        public String imageSprite;
     }
 }

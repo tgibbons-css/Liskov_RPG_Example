@@ -11,7 +11,7 @@ namespace Liskov_RPG_Example
 
         public override float move()
         {
-            if (CurrentArmor.weight > 5.0)
+            if (CurrentArmor.Weight > 5.0)
             {
                 return 10.0F;
             } else

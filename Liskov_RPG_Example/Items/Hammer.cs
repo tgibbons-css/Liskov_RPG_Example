@@ -6,6 +6,9 @@ namespace Liskov_RPG_Example.Items
 {
     class Hammer : Weapon
     {
+        public Hammer(int maxDamage, int attacksPerTurn, float weight) : base(maxDamage, attacksPerTurn, weight)
+        {
+        }
         public override int GetDamage()
         {
             Random rnd = new Random();
